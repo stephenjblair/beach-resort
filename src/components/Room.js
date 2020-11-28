@@ -1,10 +1,11 @@
 import React from 'react';
 import  { Link } from 'react-router-dom';
 import defaultImg from '../images/room-1.jpeg';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const Room = ({ room }) => {
-    const {name, slug, images, price } = room
+    console.log(room)
+    const { name, slug, images, price } = room
     return (
        <article className="room">
            <div className="img-container">
