@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import defaultBcg from '../images/room-1.jpeg';
-import Hero from '../components/Hero';
 import Banner from  '../components/Banner';
 import { Link } from 'react-router-dom';
 import { RoomContext } from '../context';
@@ -46,6 +45,30 @@ export default class SingleRoom extends Component {
                           return  <img key={index} src={item} alt={name}/>
                         })}
                     </div>
+                    <div className="single-room-info">
+                        <article className="description">
+                            <h3>Details</h3>
+                            <p>{description}</p>
+                        </article>
+                        <article className="info">
+                            <h3>Info</h3>
+                            <h6>Price: £{price}</h6>
+                            <h6>Size: {size} SQFT</h6>
+                            <h6>Max Capacity: 
+                                { capacity > 1  ? `${capacity} people` : `${capacity} person` }
+                            </h6>
+                            <h6>{pets ? "pets allowed" : "no pets allowed"}</h6>
+                            <h6>{breakfast && "free brekfast included"}</h6>
+                        </article>
+                    </div>
+                </section>
+                <section className="room-extras">
+                    <h6>extras</h6>
+                    <ul className="extras">
+                        {extras.map((item, index) => {
+                            return <li key={index}>- {item}</li>
+                        })}
+                    </ul>
                 </section>
             </>
         )
